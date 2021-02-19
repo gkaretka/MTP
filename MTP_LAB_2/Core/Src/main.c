@@ -58,6 +58,8 @@ void vysliMedzeru(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+// Cely projekt sa nachadza na githube: https://github.com/gkaretka/MTP/tree/main/MTP_LAB_2
 #define ONE_SPACE		250
 
 #define BODKA '.'
