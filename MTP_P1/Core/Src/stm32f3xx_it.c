@@ -240,7 +240,6 @@ void TIM1_UP_TIM16_IRQHandler(void)
 
 	  if (machine_state == CNT_UP_W8) {
 		  ccr1 = UtoCCR1(u_q15);
-		  //TIM1->CCR1 = UtoCCR1(u_q15);
 		  TIM1->CCR2 = UtoCCR2(u_q15);
 	  } else if (machine_state == SQUARE_WAVE_W8) {
 		  if (cnt_dir == 1) {
@@ -248,8 +247,7 @@ void TIM1_UP_TIM16_IRQHandler(void)
 		  } else if (cnt_dir == 0) {
 			  l_u_q15 = FtoQ15(-0.5f);
 		  }
-		  ccr1 = UtoCCR1(u_q15);
-		  //TIM1->CCR1 = UtoCCR1(l_u_q15);
+		  ccr1 = UtoCCR1(l_u_q15);
 		  TIM1->CCR2 = UtoCCR2(l_u_q15);
 	  }
 

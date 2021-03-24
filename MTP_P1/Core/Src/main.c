@@ -101,7 +101,9 @@ int main(void)
   LL_TIM_EnableIT_UPDATE(TIM3);
 
   LL_TIM_EnableDMAReq_CC1(TIM1);
-  LL_DMA_ConfigAddresses(DMA1, LL_DMA_CHANNEL_2, (uint32_t)((uint32_t*) &ccr1), (uint32_t)(&TIM1->CCR1), LL_DMA_DIRECTION_MEMORY_TO_PERIPH);
+  LL_DMA_SetPeriphAddress(DMA1, LL_DMA_CHANNEL_2, (uint32_t)&TIM1->CCR1);
+  LL_DMA_SetMemoryAddress(DMA1, LL_DMA_CHANNEL_2, (uint32_t)&ccr1);
+  LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_2, 2);
   LL_DMA_EnableChannel(DMA1, LL_DMA_CHANNEL_2);
   /* USER CODE END 2 */
 
@@ -391,9 +393,8 @@ static void MX_TIM3_Init(void)
 static void MX_DMA_Init(void) 
 {
 
-  /* Init with LL driver */
   /* DMA controller clock enable */
-  LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_DMA1);
+  __HAL_RCC_DMA1_CLK_ENABLE();
 
   /* DMA interrupt init */
   /* DMA1_Channel2_IRQn interrupt configuration */
