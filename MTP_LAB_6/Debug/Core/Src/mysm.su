@@ -1,0 +1,5 @@
+mysm.c:22:6:loop	4	static
+mysm.c:30:6:my_state_1_handler	4	static
+mysm.c:34:6:my_state_machine	8	static
+mysm.c:50:6:my_state_machine_inc_state	4	static
+mysm.c:61:6:my_tim_isr	8	static

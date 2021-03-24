@@ -1,0 +1,16 @@
+stm32f3xx_ll_dma.h:1486:22:LL_DMA_ClearFlag_GI2	16	static
+stm32f3xx_ll_tim.h:1353:22:LL_TIM_EnableCounter	16	static
+stm32f3xx_ll_tim.h:4006:22:LL_TIM_ClearFlag_UPDATE	16	static
+stm32f3xx_it.c:78:6:NMI_Handler	4	static
+stm32f3xx_it.c:91:6:HardFault_Handler	4	static
+stm32f3xx_it.c:106:6:MemManage_Handler	4	static
+stm32f3xx_it.c:121:6:BusFault_Handler	4	static
+stm32f3xx_it.c:136:6:UsageFault_Handler	4	static
+stm32f3xx_it.c:151:6:SVC_Handler	4	static
+stm32f3xx_it.c:164:6:DebugMon_Handler	4	static
+stm32f3xx_it.c:177:6:PendSV_Handler	4	static
+stm32f3xx_it.c:190:6:SysTick_Handler	8	static
+stm32f3xx_it.c:211:6:DMA1_Channel2_IRQHandler	8	static
+stm32f3xx_it.c:225:6:TIM1_UP_TIM16_IRQHandler	8	static
+stm32f3xx_it.c:264:6:TIM3_IRQHandler	8	static
+stm32f3xx_it.c:278:6:EXTI15_10_IRQHandler	8	static
