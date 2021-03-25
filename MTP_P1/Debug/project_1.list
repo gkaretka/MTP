@@ -1220,8 +1220,8 @@ int main(void)
  80008ca:	2102      	movs	r1, #2
  80008cc:	480b      	ldr	r0, [pc, #44]	; (80008fc <main+0x78>)
  80008ce:	f7ff ffa9 	bl	8000824 <LL_DMA_SetMemoryAddress>
-  LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_2, 2);
- 80008d2:	2202      	movs	r2, #2
+  LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_2, 1);
+ 80008d2:	2201      	movs	r2, #1
  80008d4:	2102      	movs	r1, #2
  80008d6:	4809      	ldr	r0, [pc, #36]	; (80008fc <main+0x78>)
  80008d8:	f7ff ff80 	bl	80007dc <LL_DMA_SetDataLength>

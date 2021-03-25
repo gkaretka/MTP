@@ -103,7 +103,7 @@ int main(void)
   LL_TIM_EnableDMAReq_CC1(TIM1);
   LL_DMA_SetPeriphAddress(DMA1, LL_DMA_CHANNEL_2, (uint32_t)&TIM1->CCR1);
   LL_DMA_SetMemoryAddress(DMA1, LL_DMA_CHANNEL_2, (uint32_t)&ccr1);
-  LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_2, 2);
+  LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_2, 1);
   LL_DMA_EnableChannel(DMA1, LL_DMA_CHANNEL_2);
   /* USER CODE END 2 */
 
