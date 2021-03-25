@@ -81,6 +81,7 @@ int main(void)
 
   /* USER CODE BEGIN Init */
   machine_state	= STATE_CNT;
+
   /* USER CODE END Init */
 
   /* Configure the system clock */

@@ -56,6 +56,19 @@ void state_machine_executor(void)
 	}
 }
 
+int16_t q_add_sat(int16_t a, int16_t b)
+{
+    int16_t result;
+    int32_t tmp;
+
+    tmp = (int32_t)a + (int32_t)b;
+    if (tmp > 0x7FFF) tmp = 0x7FFF;
+    if (tmp < -1 * 0x8000) tmp = -1 * 0x8000;
+    result = (int16_t)tmp;
+
+    return result;
+}
+
 void increase_state(void)
 {
 	machine_state++;

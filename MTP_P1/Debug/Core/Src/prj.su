@@ -1,8 +1,0 @@
-stm32f3xx_ll_tim.h:1353:22:LL_TIM_EnableCounter	16	static
-stm32f3xx_ll_tim.h:1364:22:LL_TIM_DisableCounter	16	static
-stm32f3xx_ll_tim.h:1877:22:LL_TIM_CC_EnableChannel	16	static
-stm32f3xx_ll_tim.h:3776:22:LL_TIM_EnableAllOutputs	16	static
-stm32f3xx_ll_tim.h:3791:22:LL_TIM_DisableAllOutputs	16	static
-stm32f3xx_ll_tim.h:4349:22:LL_TIM_EnableIT_UPDATE	16	static
-prj.c:12:6:state_machine_executor	8	static
-prj.c:59:6:increase_state	4	static

@@ -211,7 +211,7 @@ void SysTick_Handler(void)
 void DMA1_Channel2_IRQHandler(void)
 {
   /* USER CODE BEGIN DMA1_Channel2_IRQn 0 */
-  LL_DMA_ClearFlag_GI2(DMA1);
+
   /* USER CODE END DMA1_Channel2_IRQn 0 */
   
   /* USER CODE BEGIN DMA1_Channel2_IRQn 1 */
@@ -231,12 +231,14 @@ void TIM1_UP_TIM16_IRQHandler(void)
   /* USER CODE BEGIN TIM1_UP_TIM16_IRQn 1 */
 
   l_cnt++;
-  if (l_cnt > COUNTER_2HZ_CNT) {
-	  if (u_q15 >= FtoQ15(0.99f)) cnt_dir = 0;
-	  else if (u_q15 <= FtoQ15(-0.99f)) cnt_dir = 1;
+  if (l_cnt > COUNTER_2HZ_CNT) { // div T=2s
+	  if (u_q15 >= FtoQ15(1.f))
+		  cnt_dir = 0;
+	  else if (u_q15 <= FtoQ15(-1.0f))
+		  cnt_dir = 1;
 
-	  if (cnt_dir == 1) u_q15 += FtoQ15(COUNTER_2HZ_STEP);
-	  else if (cnt_dir == 0) u_q15 -= FtoQ15(COUNTER_2HZ_STEP);
+	  if (cnt_dir == 1) u_q15 = q_add_sat(u_q15, FtoQ15(COUNTER_2HZ_STEP));
+	  else if (cnt_dir == 0) u_q15 = q_add_sat(-FtoQ15(COUNTER_2HZ_STEP), u_q15);
 
 	  if (machine_state == CNT_UP_W8) {
 		  ccr1 = UtoCCR1(u_q15);
