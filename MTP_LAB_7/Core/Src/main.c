@@ -43,7 +43,9 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint8_t ubSinValues[256];
+#define RESOLUTION	256.0
+
+uint8_t ubSinValues[(int)RESOLUTION];
 uint8_t sindex;
 /* USER CODE END PV */
 
@@ -70,8 +72,8 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 
-  for (uint16_t i = 0; i < 256; i++) {
-	  ubSinValues[i] = (uint8_t)((sin(M_PI*2.0*(double)i/256.0) + 1.0)*(255.0/2.0));
+  for (uint16_t i = 0; i < (int)RESOLUTION; i++) {
+	  ubSinValues[i] = (uint8_t)((sin((double)M_PI*2.0*(double)i/RESOLUTION) * (double)0.5 + (double)0.7)*(double)(RESOLUTION-50));
   }
 
   /* USER CODE END 1 */
@@ -100,14 +102,14 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   LL_DMA_SetMemoryAddress(DMA1, LL_DMA_CHANNEL_3, (uint32_t)ubSinValues);
-  LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_3, 256);
+  LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_3, RESOLUTION);
   LL_DMA_SetPeriphAddress(DMA1, LL_DMA_CHANNEL_3, (uint32_t)&DAC1->DHR8R1);
   LL_DMA_EnableChannel(DMA1, LL_DMA_CHANNEL_3);
 
   LL_DAC_EnableDMAReq(DAC1, LL_DAC_CHANNEL_1);
 
   LL_TIM_ClearFlag_UPDATE(TIM6);
-  LL_TIM_EnableIT_UPDATE(TIM6);
+  //LL_TIM_EnableIT_UPDATE(TIM6);
   LL_TIM_EnableCounter(TIM6);
 
   LL_DAC_Enable(DAC1, LL_DAC_CHANNEL_1);
@@ -195,7 +197,7 @@ static void MX_DAC1_Init(void)
   /* DAC1_CH1 Init */
   LL_DMA_SetDataTransferDirection(DMA1, LL_DMA_CHANNEL_3, LL_DMA_DIRECTION_MEMORY_TO_PERIPH);
 
-  LL_DMA_SetChannelPriorityLevel(DMA1, LL_DMA_CHANNEL_3, LL_DMA_PRIORITY_LOW);
+  LL_DMA_SetChannelPriorityLevel(DMA1, LL_DMA_CHANNEL_3, LL_DMA_PRIORITY_VERYHIGH);
 
   LL_DMA_SetMode(DMA1, LL_DMA_CHANNEL_3, LL_DMA_MODE_CIRCULAR);
 
@@ -255,7 +257,7 @@ static void MX_TIM6_Init(void)
   /* USER CODE END TIM6_Init 1 */
   TIM_InitStruct.Prescaler = 0;
   TIM_InitStruct.CounterMode = LL_TIM_COUNTERMODE_UP;
-  TIM_InitStruct.Autoreload = 49;
+  TIM_InitStruct.Autoreload = 29;
   LL_TIM_Init(TIM6, &TIM_InitStruct);
   LL_TIM_DisableARRPreload(TIM6);
   LL_TIM_SetTriggerOutput(TIM6, LL_TIM_TRGO_UPDATE);
