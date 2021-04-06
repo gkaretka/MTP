@@ -1949,7 +1949,6 @@ int main(void)
   LL_TIM_ClearFlag_UPDATE(TIM6);
  80011ae:	4811      	ldr	r0, [pc, #68]	; (80011f4 <main+0x12c>)
  80011b0:	f7ff ff31 	bl	8001016 <LL_TIM_ClearFlag_UPDATE>
-  //LL_TIM_EnableIT_UPDATE(TIM6);
   LL_TIM_EnableCounter(TIM6);
  80011b4:	480f      	ldr	r0, [pc, #60]	; (80011f4 <main+0x12c>)
  80011b6:	f7ff feeb 	bl	8000f90 <LL_TIM_EnableCounter>

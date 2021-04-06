@@ -109,7 +109,6 @@ int main(void)
   LL_DAC_EnableDMAReq(DAC1, LL_DAC_CHANNEL_1);
 
   LL_TIM_ClearFlag_UPDATE(TIM6);
-  //LL_TIM_EnableIT_UPDATE(TIM6);
   LL_TIM_EnableCounter(TIM6);
 
   LL_DAC_Enable(DAC1, LL_DAC_CHANNEL_1);
