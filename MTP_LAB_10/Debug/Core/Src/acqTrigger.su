@@ -1,0 +1,11 @@
+acqTrigger.c:75:6:AutoRearmTrigger	4	static
+acqTrigger.c:82:6:SetTriggerOverflow	16	static
+acqTrigger.c:98:6:AddingNewRecord	4	static
+acqTrigger.c:104:6:AcqConfigureTrigger	24	static
+acqTrigger.c:194:12:manageTrigEvent	4	static
+acqTrigger.c:213:5:AcqEvaluateTrigger	8	static
+acqTrigger.c:307:5:valAboveThreshold	24	static
+acqTrigger.c:335:5:valBelowThreshold	24	static
+acqTrigger.c:363:5:valEqualsThreshold	24	static
+acqTrigger.c:393:5:evaluateEnd	4	static
+acqTrigger.c:448:6:HostReadEvent	4	static

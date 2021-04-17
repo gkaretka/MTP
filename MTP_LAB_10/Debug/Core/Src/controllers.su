@@ -1,0 +1,6 @@
+controllers.c:14:6:filter_lp	24	static
+controllers.c:20:6:filter_lp_init	16	static
+controllers.c:32:6:integrator_gain	24	static
+controllers.c:38:6:integrator_gain_init	16	static
+controllers.c:49:6:regPI_p	40	static
+controllers.c:71:6:regPI_p_init	16	static

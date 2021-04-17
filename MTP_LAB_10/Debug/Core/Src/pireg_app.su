@@ -1,0 +1,8 @@
+stm32f3xx_ll_tim.h:1353:22:LL_TIM_EnableCounter	16	static
+stm32f3xx_ll_tim.h:1877:22:LL_TIM_CC_EnableChannel	16	static
+stm32f3xx_ll_tim.h:3776:22:LL_TIM_EnableAllOutputs	16	static
+stm32f3xx_ll_tim.h:4094:22:LL_TIM_ClearFlag_CC4	16	static
+stm32f3xx_ll_tim.h:4481:22:LL_TIM_EnableIT_CC4	16	static
+pireg_app.c:20:6:hw_init	8	static
+pireg_app.c:51:6:main_loop	8	static
+pireg_app.c:57:6:periodic_task	8	static

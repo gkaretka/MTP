@@ -1,0 +1,6 @@
+dataAcq.c:201:19:readVar8bits	16	static
+dataAcq.c:206:19:readVar16bits	16	static
+dataAcq.c:212:19:readVar32bits	16	static
+dataAcq.c:226:6:ClearBuffer	8	static
+dataAcq.c:235:5:IsBufferEmpty	16	static
+dataAcq.c:258:6:DumpTrace	64	static
